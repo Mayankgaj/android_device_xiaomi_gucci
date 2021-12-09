@@ -128,7 +128,7 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 
 # Vendor security patch level
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.mk.build.vendor_security_patch=2016-10-01
+    ro.lineage.build.vendor_security_patch=2016-10-01
 
 # Wifi
 PRODUCT_COPY_FILES += \
@@ -141,7 +141,9 @@ PRODUCT_PACKAGES += \
 
 # Ubuntu Touch
 PRODUCT_COPY_FILES += \
-    device/xiaomi/gucci/seccomp_policy/crash_dump.arm.policy:system/etc/seccomp_policy/crash_dump.arm.policy
+    $(LOCAL_PATH)/seccomp_policy/crash_dump.arm.policy:system/etc/seccomp_policy/crash_dump.arm.policy \
+    $(LOCAL_PATH)/ubuntu/70-gucci.rules:system/halium/lib/udev/rules.d/70-gucci.rules \
+    $(LOCAL_PATH)/ubuntu/scaling.conf:system/halium/etc/ubuntu-touch-session.d/android.conf
 
 # Inherit the rest from msm8916-common
 $(call inherit-product, device/cyanogen/msm8916-common/msm8916.mk)
