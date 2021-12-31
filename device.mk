@@ -143,7 +143,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/seccomp_policy/crash_dump.arm.policy:system/etc/seccomp_policy/crash_dump.arm.policy \
     $(LOCAL_PATH)/ubuntu/70-gucci.rules:system/halium/lib/udev/rules.d/70-gucci.rules \
-    $(LOCAL_PATH)/ubuntu/scaling.conf:system/halium/etc/ubuntu-touch-session.d/android.conf
+    $(LOCAL_PATH)/ubuntu/scaling.conf:system/halium/etc/ubuntu-touch-session.d/android.conf \
+    $(LOCAL_PATH)/ubuntu/apparmor/hardware/graphics.d/apparmor-easyprof-ubuntu_android9:system/halium/usr/share/apparmor/hardware/graphics.d/apparmor-easyprof-ubuntu_android9
 
 # Inherit the rest from msm8916-common
 $(call inherit-product, device/cyanogen/msm8916-common/msm8916.mk)
